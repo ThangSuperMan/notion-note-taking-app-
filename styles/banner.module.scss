@@ -1,0 +1,69 @@
+@import '_colors.scss';
+
+.banner {
+  //background-color: red;
+  display: flex;
+  align-items: flex-start;
+
+  &LeftBar {
+    width: 55%;
+  }
+
+  &RightBar {
+    width: 45%;
+    //background-color: pink;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &Title {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  &Subtitle {
+    font-size: 19px;
+    color: $subtitleColor;
+    margin-block: 20px;
+  }
+}
+
+.trusted {
+  margin-top: 40px;
+
+  &Title {
+    color: $subtitleColor;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  &List {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  &Item {
+    width: 25%;
+    list-style:none;
+    padding-inline: 8px;
+
+    &:nth-child(2) {
+      transform: translateY(1.5px);
+    }
+
+    &:last-child {
+      transform: translateY(1.5px);
+    }
+  }
+}
+
+.breakLine {
+  display: block;
+}
+

@@ -3,36 +3,38 @@ import Logo from './logo'
 import Link from 'next/link'
 import styles from '../../styles/navbar.module.scss'
 import { BiChevronDown } from 'react-icons/bi'
+import ButtonSignup from './button-signup'
 
 const Navbar = () => {
+
   return (
     <div className={styles.container}>
-      <div className={styles.rightBar}>
+      <div className={styles.leftBar}>
         <Logo />
         <ul className={styles.menuList}>
           <li className={styles.menuItem}>
             <Link href='/'>
               <a>Product</a>
             </Link>
-            <BiChevronDown />
+            <BiChevronDown className={styles.icon} />
           </li>
           <li className={styles.menuItem}>
             <Link href='/'>
               <a>Dowload</a>
             </Link>
-            <BiChevronDown />
+            <BiChevronDown className={styles.icon} />
           </li>
           <li className={styles.menuItem}>
             <Link href='/'>
               <a>Solution</a>
             </Link>
-            <BiChevronDown />
+            <BiChevronDown className={styles.icon} />
           </li>
           <li className={styles.menuItem}>
             <Link href='/'>
               <a>Resources</a>
             </Link>
-            <BiChevronDown />
+            <BiChevronDown className={styles.icon} />
           </li>
           <li className={styles.menuItem}>
             <Link href='/'>
@@ -41,17 +43,20 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className={styles.leftBar}>
+      <div className={styles.rightBar}>
         <Link href='/contact'>
-          <a>Contact sales</a>
+          <a className={styles.rightBarLink}>Contact sales</a>
         </Link>
+        <span
+          className={styles.hightlightVerticle}
+        >
+        </span>
         <Link href='/login'>
-          <a>Login</a>
+          <a className={styles.rightBarLink}>Login</a>
         </Link>
-        <span className={styles.hightlightVericle}></span>
-        <Link href='/login'>
+        <Link href='/register'>
           <a>
-            <button className={styles.butonSignup}>Try Notion free</button>
+            <ButtonSignup marginLeft={20} />
           </a>
         </Link>
       </div>
