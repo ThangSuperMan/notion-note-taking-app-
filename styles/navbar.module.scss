@@ -23,6 +23,7 @@
 }
 
 .menuItem {
+  position: relative;
   //background-color: pink;
   list-style: none;
   display: flex;
@@ -38,12 +39,98 @@
   }
 
   &:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: $mainHoverColor;
   }
-   
-  //&:not(:last-child) {
-    //margin-right: 20px;
-  //}
+
+  &Dropdown {
+    //background-color: lightblue;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 250px;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
+    padding: 4px 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: white;
+    border: 1px solid $secondaryBorderColor; 
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.menuItemDropdownDownload {
+  margin-block: 4px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border: 1px solid $secondaryBorderColor;
+  border-radius: 5px;
+  transition: all 0.1s linear;
+
+  &:hover {
+    background-color: #EFEFEF; 
+  }
+
+  div {
+    //background-color: red;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  &Icon {
+    margin-right: 4px;
+    font-size: 24px;
+  }
+
+  &Desc {
+    color: $subtitleColor;
+    display: inline-block;
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: 400;
+    padding-bottom: 4px;
+  }
+
+
+}
+
+.menuItem:hover .menuItemDropdown{
+    visibility: visible;
+    opacity: 1;
+}
+
+.menuItemDropdown {
+  &Section {
+    display: block;
+    padding: 4px;
+    border-radius: 5px;
+  }
+
+  &Section:hover {
+    background-color: $mainHoverColor;
+  }
+
+  &Title {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  &Subtitle {
+    font-size: 14px;
+    color: $subtitleColor;
+  }
+}
+
+.menuItemDropdownSection:not(:first-child) {
+  margin-top: 4px;
 }
 
 .menuItem:hover {
@@ -55,6 +142,14 @@
 .rightBar {
   &Link {
     font-weight: 500;
+    font-size: 15px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: all 0.1s linear;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
   }
 }
 
@@ -83,4 +178,3 @@
   height: 20px;
   transform: translateY(5px);
 }
-

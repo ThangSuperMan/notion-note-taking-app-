@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-
 const ButtonSignup = (props) => {
   const { marginLeft, padding } = props
 
@@ -13,7 +12,7 @@ const ButtonSignup = (props) => {
     //padding: '8px 12px',
     padding: padding ? padding : '6px 12px',
     transition: 'all 0.1s linear',
-    fontSize: '14px',
+    fontSize: '15px',
     marginLeft: marginLeft ? '20px' : undefined,
   }
 
