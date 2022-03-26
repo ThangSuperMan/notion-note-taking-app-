@@ -1,7 +1,8 @@
-@import '_colors.scss';
+@import 'colors';
+@import 'mixins';
 
 .banner {
-  //background-color: red;
+  //background-color: orange;
   display: flex;
   align-items: flex-start;
 
@@ -42,14 +43,15 @@
   }
 
   &List {
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     margin-top: 20px;
   }
 
   &Item {
-    width: 25%;
+    //width: 25%;
+    width: 96px;
     list-style:none;
     padding-inline: 8px;
 
@@ -67,3 +69,77 @@
   display: block;
 }
 
+// Media quries
+@include desktop() {
+  .banner {
+    flex-direction: column-reverse;
+    align-items: center;
+    //background-color: orange;
+
+    &Button {
+      text-align: center;
+    }
+
+    &RightBar {
+      width: 400px;
+      margin-bottom: 35px;
+    }
+  }
+
+  .trusted {
+    margin-top: 40px;
+    margin-inline: auto;
+    text-align: center;
+    //background-color: red;
+    &Title {
+      text-align: center;
+    }
+
+    &List {
+      //background-color: red;
+      margin-inline: auto;
+      flex-wrap: wrap;
+      align-items: stretch;
+      max-width: 300px;
+    }
+    
+    &Item {
+      margin: 5px;
+      justify-content: space-between;
+      //background-color: orange;
+      width: calc(33.33% - 10px);
+      //border: 1px solid #000;
+    }
+  }
+}
+
+@include tablet() {
+}
+
+@include mobile() { 
+  .banner {
+    &Title {
+      font-size: 38px;
+      line-height: 1.15;
+      text-align: center;
+    }
+
+    &LeftBar {
+      width: 100%;
+      text-align: center;
+    }
+
+    &Subtitle {
+      font-size: 17px;
+    }
+  }
+}
+
+@include mobile400() {
+  .banner {
+    
+    &RightBar {
+      width: 100%;
+    }
+  }
+}

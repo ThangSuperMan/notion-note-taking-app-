@@ -1,13 +1,80 @@
 @import 'colors';
+@import 'mixins';
+
+.wrapper {
+  padding-inline: 20px;
+}
 
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #E5E4E2;
-  padding-inline: 20px;
   padding-block: 16px;
   margin-bottom: 110px;
+}
+
+.listMenuMobile {
+  display: none;
+  position: absolute;
+  // height of navbar component
+  top: 65.5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px 20px;
+  background-color: white;
+  width: 100%;
+  z-index: 100;
+}
+
+.itemMenuMobile {
+  border-bottom: 1px solid $secondaryBorderColor; 
+
+  &Link {
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: 25px;
+  }
+
+  ul {
+    margin-block: 30px;
+  }
+
+  ul li {
+    list-style: none;
+    padding-block: 4px;
+    line-height: 25.5px;
+  }
+} 
+.dowloadNotion {
+  padding: 8px 16px;
+  margin-bottom: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border: 1px solid $secondaryBorderColor;
+  border-radius: 5px;
+  transition: all 0.1s linear;
+
+  &:hover {
+    background-color: #EFEFEF; 
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  &Icon {
+    margin-right: 4px;
+    font-size: 24px;
+  }
 }
 
 .leftBar {
@@ -24,7 +91,6 @@
 
 .menuItem {
   position: relative;
-  //background-color: pink;
   list-style: none;
   display: flex;
   align-items: center;
@@ -43,7 +109,6 @@
   }
 
   &Dropdown {
-    //background-color: lightblue;
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -61,7 +126,7 @@
 }
 
 .menuItemDropdownDownload {
-  margin-block: 4px;
+  margin-block: 8px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -74,7 +139,6 @@
   }
 
   div {
-    //background-color: red;
     display: flex;
     align-items: center;
     padding: 4px;
@@ -97,8 +161,6 @@
     font-weight: 400;
     padding-bottom: 4px;
   }
-
-
 }
 
 .menuItem:hover .menuItemDropdown{
@@ -140,6 +202,27 @@
 }
 
 .rightBar {
+  display: flex;
+  align-items: center;
+
+  &Container {
+    display: inline-block;
+  }
+
+  &MenuMobile {
+    display: none;
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+    //background-color: lightblue !important;
+
+    .icon {
+      font-weight: 900;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   &Link {
     font-weight: 500;
     font-size: 15px;
@@ -174,7 +257,28 @@
   display: inline-block;
   background-color: $secondaryBorderColor;
   width: 1px;
-  margin-inline: 20px;
+  margin-inline: 8px;
   height: 20px;
   transform: translateY(5px);
+}
+
+// Media queries
+@include desktop() {
+  .menuList {
+    display: none;
+  }
+
+  .rightBar {
+    &Container {
+    display: none;
+    }
+
+    &MenuMobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: none;
+    }
+  }
 }

@@ -1,11 +1,10 @@
 import React from 'react'
 import Navbar from '../src/components/navbar'
 
-const Login = () => {
+const Login = ({ router }) => {
   return (
     <div>
-      <Navbar />
-      Login
+      Login page
     </div>
   )
 }

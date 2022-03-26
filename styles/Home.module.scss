@@ -1,5 +1,11 @@
+@import 'mixins';
+
 .appContainer {
   width: 100%;
   padding-inline: 60px;
   overflow: hidden;
+
+  @include mobile() {
+    padding-inline: 20px;
+  }
 }

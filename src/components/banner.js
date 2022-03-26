@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../../styles/banner.module.scss'
 import Image from 'next/image'
 import ButtonSignup from './button-signup'
+import { motion } from 'framer-motion'
 import curologo from '../assets/curology.png'
 import mixapanel from '../assets/mixpanel.png'
 import mitsushibi from '../assets/mitsubishi.png'
@@ -9,14 +10,28 @@ import matchV2 from '../assets/match-v2.png'
 import headspaceLogo from '../assets/headspace-logo.png'
 
 const Banner = () => {
+
+  const variants = {
+    hidden: { x: 0, y: 20, opacity: 0 },
+    enter: { x: 0, y: 0, opacity: 1 },
+    exit: { x: 0, y: 20, opacity: 0 }
+  }
+
   return (
-    <div className={styles.banner}>
+    <motion.div
+      initial='hidden'
+      animate='enter'
+      exit='exit'
+      variants={variants}
+      transition={{ duration: 0.8, ease: 'easeInOut' }}
+      className={styles.banner}>
       <div className={styles.bannerLeftBar}>
         <h1 className={styles.bannerTitle}>
-          <span className={styles.breakLine}>
+          <span>
             One workspace.
           </span>
-          <span className={styles.breakLine}>
+          <br />
+          <span>
             Every team.
           </span>
         </h1>
@@ -28,7 +43,9 @@ const Banner = () => {
             Notion to work the way you do.
           </span>
         </p>
-        <ButtonSignup padding='8px 20px' />
+        <div className={styles.bannerButton}>
+          <ButtonSignup padding='8px 20px' />
+        </div>
         <div className={styles.trusted}>
           <h4 className={styles.trustedTitle}>
             trusted by teams at
@@ -55,7 +72,7 @@ const Banner = () => {
       <div className={styles.bannerRightBar}>
         <img src='https://www.notion.so/cdn-cgi/image/format=auto,width=1080,quality=100/front-static/pages/product/home-page-hero-refreshed-v3.png' />
       </div>
-    </div>
+    </motion.div>
   )
 }
 
