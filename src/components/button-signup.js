@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 
 const ButtonSignup = (props) => {
   const { marginLeft, padding } = props
-  const buttonRef = useState(null)
+  const buttonRef = useRef(null)
 
   const styles = {
     backgroundColor: '#e16259',

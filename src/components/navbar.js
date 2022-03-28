@@ -178,8 +178,8 @@ const Navbar = () => {
           </div>
           <div className={styles.rightBar}>
             <div className={styles.rightBarContainer}>
-              <Link href='/contact'>
-                <a className={styles.rightBarLink}>Contact sales</a>
+              <Link href='/register'>
+                <a className={styles.rightBarLink}>Register</a>
               </Link>
               <span
                 className={styles.hightlightVerticle}
